@@ -488,6 +488,19 @@
   background: var(--pink);
 }
 
+.music-card audio {
+  display: none;
+}
+
+.player-time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1;
+}
+
 .play-button {
   width: 46px;
   height: 46px;
@@ -659,6 +672,11 @@
   border-radius: 18px;
 }
 
+.playlist-item.is-active {
+  border-color: rgba(255, 143, 179, .42);
+  background: linear-gradient(135deg, #fff5f8 0%, #e8f5ff 100%);
+}
+
 .playlist-item img {
   width: 54px;
   height: 54px;
@@ -673,6 +691,11 @@
   border-radius: 50%;
   background: var(--pink-soft);
   color: var(--text-primary);
+}
+
+.playlist-item.is-active button {
+  background: var(--pink-deep);
+  color: #fff;
 }
 
 .bottom-nav {

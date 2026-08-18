@@ -67,10 +67,10 @@
             <div class="player-mini">
               <div class="disc"><img src="imgs/b8.png" alt=""></div>
               <div>
-                <h3>Your Hand in Mine</h3>
-                <p>Explosions in the Sky</p>
-                <div class="progress"><span></span></div>
-                <button class="play-button" type="button" aria-label="播放">▶</button>
+                <h3 data-player-title>LANY - 'Cause You Have To</h3>
+                <p data-player-artist>LANY</p>
+                <div class="progress"><span data-player-progress></span></div>
+                <button class="play-button" type="button" aria-label="播放" data-player-toggle>▶</button>
               </div>
             </div>
           </article>
@@ -116,14 +116,14 @@
           <article class="moment-card"><img class="moment-image" src="imgs/moments/w2.jpg" alt=""><h3>看吧，还有个面。🍰</h3><p>08.17 <span>♡ 96</span></p></article>
           <article class="moment-card"><img class="moment-image" src="imgs/moments/w3.jpg" alt=""><h3>意大利面 哈哈哈。</h3><p>08.16 <span>♡ 88</span></p></article>
           <article class="moment-card"><img class="moment-image" src="imgs/moments/w4.jpg" alt=""><h3>好吃呢</h3><p>08.15 <span>♡ 77</span></p></article>
-          <article class="moment-card"><img class="moment-image" src="imgs/moments/w5.jpg" alt=""><h3>拖延症发作中 🫠</h3><p>08.14 <span>♡ 66</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w5.jpg" alt=""><h3>我要去冲凉了🫠</h3><p>08.14 <span>♡ 66</span></p></article>
           <article class="moment-card"><img class="moment-image" src="imgs/moments/w6.jpg" alt=""><h3>记仇备忘录 ☁</h3><p>08.13 <span>♡ 102</span></p></article>
-          <article class="moment-card"><img class="moment-image" src="imgs/moments/w7.jpg" alt=""><h3>下班后的快乐 ✨</h3><p>08.12 <span>♡ 91</span></p></article>
-          <article class="moment-card"><img class="moment-image" src="imgs/moments/w8.jpg" alt=""><h3>吃饭最大 🍜</h3><p>08.11 <span>♡ 83</span></p></article>
-          <article class="moment-card"><img class="moment-image" src="imgs/moments/w9.jpg" alt=""><h3>深夜不想睡 ☾</h3><p>08.10 <span>♡ 74</span></p></article>
-          <article class="moment-card"><img class="moment-image" src="imgs/moments/w10.jpg" alt=""><h3>碎碎念现场 💬</h3><p>08.09 <span>♡ 69</span></p></article>
-          <article class="moment-card"><img class="moment-image" src="imgs/moments/w11.jpg" alt=""><h3>今日戏精上线 🎭</h3><p>08.08 <span>♡ 118</span></p></article>
-          <article class="moment-card"><img class="moment-image" src="imgs/moments/w12.jpg" alt=""><h3>累但还挺可爱 ♡</h3><p>08.07 <span>♡ 109</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w7.jpg" alt=""><h3>好吃欸鱼肉✨</h3><p>08.12 <span>♡ 91</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w8.jpg" alt=""><h3>听歌啊</h3><p>08.11 <span>♡ 83</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w9.jpg" alt=""><h3>嘻嘻☾</h3><p>08.10 <span>♡ 74</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w10.jpg" alt=""><h3>难得早下班💬</h3><p>08.09 <span>♡ 69</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w11.jpg" alt=""><h3>感觉像个老人家。🎭</h3><p>08.08 <span>♡ 118</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w12.jpg" alt=""><h3>可爱吗？我的小风扇？♡</h3><p>08.07 <span>♡ 109</span></p></article>
         </section>
         <button class="fab" type="button" aria-label="新增">＋</button>
       </section>
@@ -169,19 +169,25 @@
           <div class="player-large">
             <div class="disc disc-large"><img src="imgs/b8.png" alt=""></div>
             <div>
-              <h3>Your Hand in Mine</h3>
-              <p>Explosions in the Sky</p>
-              <div class="progress"><span></span></div>
-              <div class="player-controls"><button>◀</button><button class="play-button">▶</button><button>▶</button></div>
+              <h3 data-player-title>LANY - 'Cause You Have To</h3>
+              <p data-player-artist>LANY</p>
+              <div class="progress"><span data-player-progress></span></div>
+              <div class="player-time"><span data-player-current>00:00</span><span data-player-duration>00:00</span></div>
+              <div class="player-controls">
+                <button type="button" data-player-prev aria-label="上一首">◀</button>
+                <button class="play-button" type="button" data-player-toggle aria-label="播放">▶</button>
+                <button type="button" data-player-next aria-label="下一首">▶</button>
+              </div>
             </div>
           </div>
+          <audio id="music-audio" preload="metadata" src="mp3/LANY - 'Cause You Have To.mp3"></audio>
         </article>
         <section>
           <h2 class="section-title list-title">我的歌单</h2>
           <div class="playlist">
-            <article class="card playlist-item"><img src="imgs/b9.png" alt=""><div><h3>温柔治愈系</h3><p>25 首</p></div><button>▶</button></article>
-            <article class="card playlist-item"><img src="imgs/b10.png" alt=""><div><h3>夜晚与思绪</h3><p>18 首</p></div><button>▶</button></article>
-            <article class="card playlist-item"><img src="imgs/b11.png" alt=""><div><h3>春日限定</h3><p>32 首</p></div><button>▶</button></article>
+            <article class="card playlist-item" data-track-index="0"><img src="imgs/b9.png" alt=""><div><h3>LANY - 'Cause You Have To</h3><p>LANY</p></div><button type="button" data-track-index="0">▶</button></article>
+            <article class="card playlist-item" data-track-index="1"><img src="imgs/b10.png" alt=""><div><h3>LANY - 13</h3><p>LANY</p></div><button type="button" data-track-index="1">▶</button></article>
+            <article class="card playlist-item" data-track-index="2"><img src="imgs/b11.png" alt=""><div><h3>Mean It</h3><p>LAUV, LANY</p></div><button type="button" data-track-index="2">▶</button></article>
           </div>
         </section>
       </section>

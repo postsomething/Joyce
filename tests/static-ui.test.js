@@ -84,3 +84,20 @@ for (const selector of [
 assert.match(css, /--app-max-width:\s*430px/, 'mobile app max width is defined');
 assert.match(css, /#ff8fb3/i, 'pink design token exists');
 assert.match(css, /#8fcaff/i, 'blue design token exists');
+
+for (const track of [
+  "mp3/LANY - 'Cause You Have To.mp3",
+  'mp3/LANY - 13.mp3',
+  'mp3/LAUV,LANY - Mean It.mp3',
+]) {
+  assert.match(html + read('js/app.js'), new RegExp(track.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `${track} is wired into player`);
+}
+
+assert.match(html, /<audio[^>]+id="music-audio"/, 'music audio element exists');
+assert.match(html, /data-player-title/, 'player title binding exists');
+assert.match(html, /data-player-artist/, 'player artist binding exists');
+assert.match(html, /data-player-progress/, 'player progress binding exists');
+assert.match(html, /data-track-index="0"/, 'playlist track buttons are indexed');
+assert.match(read('js/app.js'), /Joyce\.musicPlayer/, 'music player module is exposed');
+assert.match(read('js/app.js'), /togglePlayback/, 'play pause behavior exists');
+assert.match(read('js/app.js'), /selectTrack/, 'playlist selection behavior exists');
