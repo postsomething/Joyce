@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#ffffff">
-    <title>Joyce H5</title>
+    <meta name="theme-color" content="#fffafb">
+    <title>Joyce 的个人空间</title>
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
@@ -18,10 +18,172 @@
   <body>
     <main id="app" class="app" aria-live="polite"></main>
 
-    <template id="view-home">
-      <section class="home page">
-        <h1 class="home__title">Joyce H5</h1>
-        <p class="home__description">原生 H5 单页应用模板已准备就绪。</p>
+    <template id="view-space">
+      <section class="page space-page">
+        <header class="page-head space-head">
+          <div>
+            <h1 class="page-title display-title">Hi, Joyce <span>♡</span></h1>
+            <p class="page-subtitle">欢迎来到打工碎碎念小宇宙 🐾</p>
+          </div>
+          <div class="head-actions" aria-label="页面操作">
+            <button class="icon-button" type="button" aria-label="搜索">⌕</button>
+            <button class="icon-button" type="button" aria-label="通知">♧</button>
+          </div>
+          <img class="mascot hero-mascot" src="imgs/b1.png" alt="抱着爱心的小莓玩偶">
+          <span class="deco deco-star">☆</span>
+          <span class="deco deco-cloud">☁</span>
+        </header>
+
+        <article class="card profile-card">
+          <img class="avatar" src="imgs/header.jpg" alt="Joyce 头像">
+          <div class="profile-content">
+            <h2>Joyce 🍰</h2>
+            <p class="handle">@joyceafterwork</p>
+            <p class="quote">“ 工作很累，但美食和吐槽会救我一下。 ”</p>
+            <div class="chip-row">
+              <span class="chip">⌖ 马来西亚</span>
+              <span class="chip">♡ 26岁</span>
+              <span class="chip">☾ 夜猫子</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="today-card card-mix">
+          <span class="today-label">Today ☁</span>
+          <span class="today-date">08 / 18</span>
+          <h2 class="today-word display-title">tired ♡</h2>
+          <p>今天也在上班和想吃美食之间反复横跳 🍰</p>
+          <div class="today-meta">
+            <span>☁ 马来西亚</span>
+            <span>☕ 续命中</span>
+            <span>☾ 晚睡预定</span>
+          </div>
+          <img class="mascot today-mascot" src="imgs/b3.png" alt="探出头的小莓玩偶">
+        </article>
+
+        <div class="dual-grid">
+          <article class="music-card">
+            <h2 class="section-title">Now Playing ♫</h2>
+            <div class="player-mini">
+              <div class="disc"><img src="imgs/b8.png" alt=""></div>
+              <div>
+                <h3>Your Hand in Mine</h3>
+                <p>Explosions in the Sky</p>
+                <div class="progress"><span></span></div>
+                <button class="play-button" type="button" aria-label="播放">▶</button>
+              </div>
+            </div>
+          </article>
+          <article class="little-card">
+            <h2 class="section-title">Little Things ☁</h2>
+            <p>爱吐槽工作，爱碎碎念，记仇但不一定立刻发作；有点小暧昧脑补，但主要还是太累。</p>
+            <img class="mascot little-mascot" src="imgs/b9.png" alt="">
+            <div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+          </article>
+        </div>
+
+        <section class="card routine-card">
+          <div class="section-head">
+            <h2 class="section-title">Daily Loop ☾</h2>
+            <span>工作日版</span>
+          </div>
+          <ol class="routine-list">
+            <li><time>06:30</time><span>起床，灵魂还在加载</span></li>
+            <li><time>08:30</time><span>地铁，开始酝酿今日吐槽</span></li>
+            <li><time>09:00</time><span>上班，表面冷静内心碎碎念</span></li>
+            <li><time>13:00</time><span>吃饭，美食优先级上升</span></li>
+            <li><time>14:00</time><span>继续上班，绝不摸鱼，干垮公司</span></li>
+            <li><time>21:30</time><span>下班，累到只想躺平</span></li>
+            <li><time>22:30</time><span>到家吃饭，终于像个人</span></li>
+            <li><time>23:00</time><span>冲凉吹头发，必须来点音乐</span></li>
+            <li><time>24:00</time><span>不想睡，夜猫子上线</span></li>
+            <li><time>01:30</time><span>睡觉，明天再继续记仇</span></li>
+          </ol>
+        </section>
+      </section>
+    </template>
+
+    <template id="view-moments">
+      <section class="page sub-page moments-page">
+        <header class="page-head compact-head">
+          <h1 class="page-title display-title">Moments ˚♡</h1>
+          <p class="page-subtitle">地铁、美食、加班和刷剧留下来的证据 🐾</p>
+          <img class="mascot sub-mascot" src="imgs/b6.png" alt="">
+        </header>
+        <div class="category-tabs"><button class="active">全部</button></div>
+        <section class="moment-grid">
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w1.jpg" alt=""><h3>这个是石榴水。 💤</h3><p>08.18 <span>♡ 128</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w2.jpg" alt=""><h3>看吧，还有个面。🍰</h3><p>08.17 <span>♡ 96</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w3.jpg" alt=""><h3>意大利面 哈哈哈。</h3><p>08.16 <span>♡ 88</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w4.jpg" alt=""><h3>好吃呢</h3><p>08.15 <span>♡ 77</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w5.jpg" alt=""><h3>拖延症发作中 🫠</h3><p>08.14 <span>♡ 66</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w6.jpg" alt=""><h3>记仇备忘录 ☁</h3><p>08.13 <span>♡ 102</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w7.jpg" alt=""><h3>下班后的快乐 ✨</h3><p>08.12 <span>♡ 91</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w8.jpg" alt=""><h3>吃饭最大 🍜</h3><p>08.11 <span>♡ 83</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w9.jpg" alt=""><h3>深夜不想睡 ☾</h3><p>08.10 <span>♡ 74</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w10.jpg" alt=""><h3>碎碎念现场 💬</h3><p>08.09 <span>♡ 69</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w11.jpg" alt=""><h3>今日戏精上线 🎭</h3><p>08.08 <span>♡ 118</span></p></article>
+          <article class="moment-card"><img class="moment-image" src="imgs/moments/w12.jpg" alt=""><h3>累但还挺可爱 ♡</h3><p>08.07 <span>♡ 109</span></p></article>
+        </section>
+        <button class="fab" type="button" aria-label="新增">＋</button>
+      </section>
+    </template>
+
+    <template id="view-about">
+      <section class="page sub-page">
+        <header class="page-head compact-head">
+          <h1 class="page-title display-title">About Joyce ♡</h1>
+          <p class="page-subtitle">关于 Joyce 的打工人小档案 🐾</p>
+          <img class="mascot sub-mascot" src="imgs/b2.png" alt="">
+        </header>
+        <article class="card about-card">
+          <div>
+            <span class="mini-label">🐻 基本信息</span>
+            <h2>Joyce 🍰</h2>
+            <p>26岁 / 马来西亚 / 打工很累</p>
+            <p>⌖ Malaysia</p>
+            <p class="quote">“ 爱吐槽工作，也爱在深夜把剧多看一集。 ”</p>
+          </div>
+          <img class="avatar avatar-large" src="imgs/header.jpg" alt="Joyce 头像">
+        </article>
+        <section class="trait-grid">
+          <article class="card like-card"><h3>工作人格</h3><p>爱吐槽工作</p><p>工作很累</p></article>
+          <article class="card like-card"><h3>说话方式</h3><p>爱碎碎念</p><p>戏精</p><p>内心弹幕多</p></article>
+          <article class="card like-card"><h3>补能方式</h3><p>美食续命</p><p>刷剧回血</p></article>
+          <article class="card like-card"><h3>小缺点</h3><p>拖延症</p><p>记仇</p></article>
+          <article class="card like-card"><h3>夜间状态</h3><p>喜欢熬夜</p><p>24:00 不想睡</p></article>
+          <article class="card like-card"><h3>隐藏设定</h3><p>有点小瑟瑟</p><p>但很会装没事</p></article>
+        </section>
+      </section>
+    </template>
+
+    <template id="view-music">
+      <section class="page sub-page">
+        <header class="page-head compact-head">
+          <h1 class="page-title display-title">Music ♫</h1>
+          <p class="page-subtitle">音乐是生活的温柔滤镜 🐾</p>
+          <img class="mascot sub-mascot" src="imgs/b8.png" alt="">
+        </header>
+        <article class="music-card music-hero">
+          <h2 class="section-title">Now Playing</h2>
+          <div class="player-large">
+            <div class="disc disc-large"><img src="imgs/b8.png" alt=""></div>
+            <div>
+              <h3>Your Hand in Mine</h3>
+              <p>Explosions in the Sky</p>
+              <div class="progress"><span></span></div>
+              <div class="player-controls"><button>◀</button><button class="play-button">▶</button><button>▶</button></div>
+            </div>
+          </div>
+        </article>
+        <section>
+          <h2 class="section-title list-title">我的歌单</h2>
+          <div class="playlist">
+            <article class="card playlist-item"><img src="imgs/b9.png" alt=""><div><h3>温柔治愈系</h3><p>25 首</p></div><button>▶</button></article>
+            <article class="card playlist-item"><img src="imgs/b10.png" alt=""><div><h3>夜晚与思绪</h3><p>18 首</p></div><button>▶</button></article>
+            <article class="card playlist-item"><img src="imgs/b11.png" alt=""><div><h3>春日限定</h3><p>32 首</p></div><button>▶</button></article>
+          </div>
+        </section>
       </section>
     </template>
   </body>

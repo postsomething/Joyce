@@ -1,15 +1,45 @@
 :root {
-  --color-background: #f5f7fa;
-  --color-surface: #ffffff;
-  --color-text: #1f2937;
-  --color-text-muted: #6b7280;
-  --color-primary: #2563eb;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --app-max-width: 430px;
+  --app-min-width: 320px;
+  --bottom-nav-height: 82px;
+
+  --pink: #ff8fb3;
+  --pink-deep: #ff6f9d;
+  --pink-light: #ffe8f0;
+  --pink-soft: #fff3f7;
+  --blue: #8fcaff;
+  --blue-deep: #6faef5;
+  --blue-light: #e8f5ff;
+  --blue-soft: #f3f9ff;
+  --purple: #c9adff;
+  --purple-soft: #f4eeff;
+  --yellow: #ffe3a0;
+  --mint: #bcebdc;
+  --bg: #fffafb;
+  --card: #ffffff;
+  --text-primary: #263653;
+  --text-secondary: #75819a;
+  --text-light: #aab2c3;
+  --text-pink: #ff7fa8;
+
+  --font-body: "PingFang SC", "Microsoft YaHei", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Comic Sans MS", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-size-base: 16px;
-  --space-sm: 8px;
+
+  --space-xs: 6px;
+  --space-sm: 10px;
   --space-md: 16px;
-  --space-lg: 24px;
-  --radius-md: 12px;
+  --space-lg: 22px;
+  --space-xl: 28px;
+
+  --radius-xl: 28px;
+  --radius-lg: 24px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+  --shadow-card: 0 10px 34px rgba(85, 75, 110, .08);
+  --shadow-soft: 0 6px 20px rgba(85, 75, 110, .06);
+
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
