@@ -1,0 +1,28 @@
+html {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.page {
+  min-height: inherit;
+  padding: calc(var(--space-lg) + var(--safe-top))
+    calc(var(--space-md) + var(--safe-right))
+    calc(var(--space-lg) + var(--safe-bottom))
+    calc(var(--space-md) + var(--safe-left));
+}
+
+.is-hidden {
+  display: none !important;
+}

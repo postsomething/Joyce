@@ -1,0 +1,20 @@
+.home {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.home__title {
+  color: var(--color-primary);
+  font-size: clamp(2rem, 10vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.home__description {
+  max-width: 32rem;
+  margin-top: var(--space-md);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
