@@ -6,17 +6,20 @@
     {
       title: "LANY - 'Cause You Have To",
       artist: 'LANY',
-      src: "mp3/LANY - 'Cause You Have To.mp3"
+      src: "mp3/LANY - 'Cause You Have To.mp3",
+      cover: "mp3/LANY - 'Cause You Have To.jpg"
     },
     {
       title: 'LANY - 13',
       artist: 'LANY',
-      src: 'mp3/LANY - 13.mp3'
+      src: 'mp3/LANY - 13.mp3',
+      cover: 'mp3/LANY - 13.jpg'
     },
     {
       title: 'Mean It',
       artist: 'LAUV, LANY',
-      src: 'mp3/LAUV,LANY - Mean It.mp3'
+      src: 'mp3/LAUV,LANY - Mean It.mp3',
+      cover: 'mp3/LAUV,LANY - Mean It.jpg'
     }
   ];
   var currentTrackIndex = 0;
@@ -47,6 +50,9 @@
     document.querySelectorAll('[data-player-artist]').forEach(function (node) {
       node.textContent = track.artist;
     });
+    document.querySelectorAll('[data-player-cover]').forEach(function (node) {
+      node.src = track.cover;
+    });
     document.querySelectorAll('[data-player-progress]').forEach(function (node) {
       node.style.width = Math.max(0, Math.min(progress, 100)) + '%';
     });
@@ -57,7 +63,8 @@
       node.textContent = formatTime(audio ? audio.duration : 0);
     });
     document.querySelectorAll('[data-player-toggle]').forEach(function (node) {
-      node.textContent = isPlaying ? 'II' : '>';
+      node.textContent = '';
+      node.classList.toggle('is-playing', Boolean(isPlaying));
       node.setAttribute('aria-label', isPlaying ? 'Pause' : 'Play');
     });
     document.querySelectorAll('.playlist-item').forEach(function (node) {

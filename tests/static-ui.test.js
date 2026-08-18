@@ -93,7 +93,16 @@ for (const track of [
   assert.match(html + read('js/app.js'), new RegExp(track.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `${track} is wired into player`);
 }
 
+for (const cover of [
+  "mp3/LANY - 'Cause You Have To.jpg",
+  'mp3/LANY - 13.jpg',
+  'mp3/LAUV,LANY - Mean It.jpg',
+]) {
+  assert.match(html + read('js/app.js'), new RegExp(cover.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `${cover} is wired into player`);
+}
+
 assert.match(html, /<audio[^>]+id="music-audio"/, 'music audio element exists');
+assert.match(html, /data-player-cover/, 'player cover binding exists');
 assert.match(html, /data-player-title/, 'player title binding exists');
 assert.match(html, /data-player-artist/, 'player artist binding exists');
 assert.match(html, /data-player-progress/, 'player progress binding exists');
@@ -101,3 +110,7 @@ assert.match(html, /data-track-index="0"/, 'playlist track buttons are indexed')
 assert.match(read('js/app.js'), /Joyce\.musicPlayer/, 'music player module is exposed');
 assert.match(read('js/app.js'), /togglePlayback/, 'play pause behavior exists');
 assert.match(read('js/app.js'), /selectTrack/, 'playlist selection behavior exists');
+assert.match(read('js/app.js'), /classList\.toggle\('is-playing'/, 'play button uses state class for icon styling');
+assert.doesNotMatch(read('js/app.js'), /textContent\s*=\s*isPlaying/, 'play button does not rely on text glyphs');
+assert.match(css, /\.play-button::before/, 'play button icon is drawn with css');
+assert.match(css, /\.play-button\.is-playing::before/, 'pause icon state is drawn with css');
