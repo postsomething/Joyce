@@ -16,6 +16,19 @@
     <script defer src="js/app.js"></script>
   </head>
   <body>
+    <section id="auth-gate" class="auth-gate" aria-labelledby="auth-title">
+      <form class="auth-card" data-auth-form>
+        <span class="auth-kicker">Private Space</span>
+        <h1 id="auth-title" class="display-title">Joyce ♡</h1>
+        <p>输入密码后进入个人空间</p>
+        <label class="auth-field">
+          <span>访问密码</span>
+          <input id="auth-password" type="password" autocomplete="current-password" placeholder="请输入密码" data-auth-password>
+        </label>
+        <p class="auth-error" data-auth-error aria-live="polite"></p>
+        <button class="auth-submit" type="submit" data-auth-submit>进入</button>
+      </form>
+    </section>
     <main id="app" class="app" aria-live="polite"></main>
 
     <template id="view-space">

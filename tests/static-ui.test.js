@@ -114,3 +114,12 @@ assert.match(read('js/app.js'), /classList\.toggle\('is-playing'/, 'play button 
 assert.doesNotMatch(read('js/app.js'), /textContent\s*=\s*isPlaying/, 'play button does not rely on text glyphs');
 assert.match(css, /\.play-button::before/, 'play button icon is drawn with css');
 assert.match(css, /\.play-button\.is-playing::before/, 'pause icon state is drawn with css');
+
+assert.match(html, /id="auth-gate"/, 'password gate overlay exists');
+assert.match(html, /id="auth-password"/, 'password input exists');
+assert.match(html, /data-auth-submit/, 'password submit button exists');
+assert.match(css, /\.auth-gate/, 'password gate styles exist');
+assert.match(read('js/app.js'), /AUTH_PASSWORD\s*=\s*'joyce'/, 'password is joyce');
+assert.match(read('js/app.js'), /sessionStorage/, 'password gate uses session storage');
+assert.match(read('js/app.js'), /joyce-authenticated/, 'password gate stores an authenticated session flag');
+assert.match(read('js/app.js'), /bootstrapApp/, 'app bootstrap is gated behind authentication');

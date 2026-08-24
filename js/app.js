@@ -2,6 +2,8 @@
   'use strict';
 
   var Joyce = window.Joyce = window.Joyce || {};
+  var AUTH_PASSWORD = 'joyce';
+  var AUTH_STORAGE_KEY = 'joyce-authenticated';
   var tracks = [
     {
       title: "LANY - 'Cause You Have To",
@@ -24,6 +26,7 @@
   ];
   var currentTrackIndex = 0;
   var audio;
+  var appStarted = false;
 
   function formatTime(value) {
     if (!Number.isFinite(value)) {
@@ -158,9 +161,60 @@
     });
   }
 
-  function bootstrap() {
+  function bootstrapApp() {
+    if (appStarted) {
+      return;
+    }
+
+    appStarted = true;
     window.Joyce.router.start();
     bindMusicControls();
+  }
+
+  function unlockApp() {
+    var gate = document.getElementById('auth-gate');
+
+    if (gate) {
+      gate.classList.add('is-hidden');
+    }
+
+    bootstrapApp();
+  }
+
+  function bindAuthGate() {
+    var form = document.querySelector('[data-auth-form]');
+    var passwordInput = document.querySelector('[data-auth-password]');
+    var errorNode = document.querySelector('[data-auth-error]');
+
+    if (window.sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true') {
+      unlockApp();
+      return;
+    }
+
+    if (!form || !passwordInput) {
+      return;
+    }
+
+    passwordInput.focus();
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      if (passwordInput.value.trim() !== AUTH_PASSWORD) {
+        if (errorNode) {
+          errorNode.textContent = '密码不对，再试一次';
+        }
+        passwordInput.select();
+        return;
+      }
+
+      window.sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+      unlockApp();
+    });
+  }
+
+  function bootstrap() {
+    bindAuthGate();
   }
 
   window.addEventListener('hashchange', function () {
